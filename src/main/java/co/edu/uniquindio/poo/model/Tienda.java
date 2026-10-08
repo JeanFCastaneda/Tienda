@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Tienda {
@@ -175,5 +176,26 @@ if(clienteEncontrado.isEmpty())
             }
         }
         return productosDisponibles;
+    }
+//punto3
+    public ArrayList<Cliente> clientesEnXFecha (){
+    ArrayList<Cliente>listaClientes = new ArrayList<>();
+    LocalDate fechaA = LocalDate.of(2026,10,7)
+    if ((fechaA).isEqual())
+        for(Factura factura : listafacturas){
+            if(factura.fecha().isEqual(fechaA)){
+                listaClientes.add(factura.cliente());
+            }
+        }
+
+    return listaClientes;
+    }
+    public ArrayList<Cliente> clientesEnXFecha2 (){
+        ArrayList<Cliente>listaClientes = new ArrayList<>();
+      for(Cliente cliente : listaClientes){
+          if(clienteAux.esCompraEnFecha(fechaA))
+      }
+
+        return listaClientes;
     }
 }
