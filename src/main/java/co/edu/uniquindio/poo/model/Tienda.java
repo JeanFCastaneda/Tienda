@@ -158,6 +158,13 @@ public List<Producto> obtenerProductosCantidadMayorA10() {
     }
     return productosDisponibles;
 }
-
+public List<Producto> obtenerProductosCantidadMayorA10YMenorA50() {
+    List<Producto> productosDisponibles = new ArrayList<>();
+    for (Producto producto : hashMaplistaProductos.values()) {
+        if (producto.getCantidadDisponible() >= 10 && < 50) {
+            productosDisponibles.add(producto);
+        }
+    }
+    return productosDisponibles;
 }
 
