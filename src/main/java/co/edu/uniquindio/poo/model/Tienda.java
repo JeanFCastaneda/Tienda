@@ -144,27 +144,36 @@ public class Tienda {
 
     Optional<Cliente> clienteEncontrado = buscarCliente(documentoIdentidad);
 
+    public Map<String, Producto> getHashMaplistaProductos() {
+        return hashMaplistaProductos;
+    }
+
+    public void setHashMaplistaProductos(Map<String, Producto> hashMaplistaProductos) {
+        this.hashMaplistaProductos = hashMaplistaProductos;
+    }
+
 
 if(clienteEncontrado.isEmpty())
 
-}
-//punto 1
-public List<Producto> obtenerProductosCantidadMayorA10() {
-    List<Producto> productosDisponibles = new ArrayList<>();
-    for (Producto producto : hashMaplistaProductos.values()) {
-        if (producto.getCantidadDisponible() >= 10) {
-            productosDisponibles.add(producto);
-        }
-    }
-    return productosDisponibles;
-}
-public List<Producto> obtenerProductosCantidadMayorA10YMenorA50() {
-    List<Producto> productosDisponibles = new ArrayList<>();
-    for (Producto producto : hashMaplistaProductos.values()) {
-        if (producto.getCantidadDisponible() >= 10 && < 50) {
-            productosDisponibles.add(producto);
-        }
-    }
-    return productosDisponibles;
-}
 
+    //punto 1
+    public List<Producto> obtenerProductosCantidadMayorA10() {
+        List<Producto> productosDisponibles = new ArrayList<>();
+        for (Producto producto : hashMaplistaProductos.values()) {
+            if (producto.getCantidadDisponible() >= 10) {
+                productosDisponibles.add(producto);
+            }
+        }
+        return productosDisponibles;
+    }
+
+    public List<Producto> obtenerProductosCantidadMayorA10YMenorA50() {
+        List<Producto> productosDisponibles = new ArrayList<>();
+        for (Producto producto : hashMaplistaProductos.values()) {
+            if (producto.getCantidadDisponible() >= 10 && < 50) {
+                productosDisponibles.add(producto);
+            }
+        }
+        return productosDisponibles;
+    }
+}
