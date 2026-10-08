@@ -198,4 +198,28 @@ if(clienteEncontrado.isEmpty())
 
         return listaClientes;
     }
+//punto 4
+    public ArrayList<Factura> obtenerFacturasConR (){
+    ArrayList<Cliente>listaClientes = new ArrayList<>();
+    for(Cliente cliente : listaClientes){
+        if(cliente.)
+    }
+    import java.util.ArrayList;
+import java.util.List;
+
+        public List<Factura> obtenerFacturasClientesConR(List<Factura> listaFacturas) {
+            List<Factura> resultado = new ArrayList<>();
+
+            for (Factura factura : listaFacturas) {
+                String nombre = factura.getCliente().getNombre();
+
+                // Verifica que no sea nulo y que empiece con 'R' o 'r'
+                if (factura.tieneClienteConR() {
+                    resultado.add(factura);
+                }
+            }
+
+            return resultado;
+        }
+    }
 }
