@@ -10,7 +10,7 @@ public class Tienda {
 
     private final ArrayList<Cliente> listaClientes = new ArrayList<>();
     private final List<Factura> listaFacturas = new LinkedList<>();
-    private Map<String, Producto> listaProductos = new HashMap<>();
+    private Map<String, Producto> hashMaplistaProductos = new HashMap<>();
 
 
     public Tienda(String nombre, String nit, String telefono) {
@@ -151,7 +151,7 @@ if(clienteEncontrado.isEmpty())
 //punto 1
 public List<Producto> obtenerProductosCantidadMayorA10() {
     List<Producto> productosDisponibles = new ArrayList<>();
-    for (Producto producto : listaProductos.values()) {
+    for (Producto producto : hashMaplistaProductos.values()) {
         if (producto.getCantidadDisponible() >= 10) {
             productosDisponibles.add(producto);
         }
