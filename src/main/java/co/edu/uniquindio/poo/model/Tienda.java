@@ -109,6 +109,7 @@ public class Tienda {
         Cliente c = buscarCliente(documentoIdentidad);
         return c != null && listaClientes.remove(c);
     }
+
     public boolean agregarFactura(Factura nuevaFactura) {
         for (Factura f : listaFacturas) {
             if (f.codigo().equalsIgnoreCase(nuevaFactura.codigo())) {
@@ -117,6 +118,7 @@ public class Tienda {
         }
         return listaFacturas.add(nuevaFactura);
     }
+
     public Factura buscarFactura(String codigo) {
         for (Factura f : listaFacturas) {
             if (f.codigo().equalsIgnoreCase(codigo)) {
@@ -125,6 +127,7 @@ public class Tienda {
         }
         return null;
     }
+
     public boolean eliminarFactura(String codigo) {
         Factura f = buscarFactura(codigo);
         if (f != null) {
@@ -132,18 +135,29 @@ public class Tienda {
         }
         return false;
     }
+
     public Optional<Cliente> buscarCliente(String documentoIdentidad) {
         return listaClientes.stream()
                 .filter(cliente -> cliente.getDocumentoIdentidad().equalsIgnoreCase(documentoIdentidad))
                 .findFirst();
     }
+
     Optional<Cliente> clienteEncontrado = buscarCliente(documentoIdentidad);
 
 
-if (clienteEncontrado.isEmpty()) {
+if(clienteEncontrado.isEmpty())
 
+}
+//punto 1
+public List<Producto> obtenerProductosCantidadMayorA10() {
+    List<Producto> productosDisponibles = new ArrayList<>();
+    for (Producto producto : listaProductos.values()) {
+        if (producto.getCantidadDisponible() >= 10) {
+            productosDisponibles.add(producto);
+        }
     }
-public
+    return productosDisponibles;
+}
 
 }
 
