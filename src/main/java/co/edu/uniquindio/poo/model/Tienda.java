@@ -239,9 +239,26 @@ import java.util.List;
                 }
                 }
             }
+        return resultado;
+    }
+//punto 6
+    public List<Factura>obtenerfacturaClienteJuanIphone(List<Factura>facturas){
+            return facturas.stream()
+                    .filter(factura -> Optional.ofNullable(factura.getNombreCompleto())
+                            .map(Cliente::getNombre)
+                            .filter("juan"::equalsIgnoreCase)
+                            .isPresent())
+                    .filter(factura -> Optional.ofNullable(factura.getDetalleFactura()) // o getDetallesFactura()
+                            .orElse(List.of())
+                            .stream()
+                            .anyMatch(detalle -> Optional.ofNullable(detalle)
+                                    .map(DetalleFactura::getProducto)
+                                    .map(Producto::getNombre)
+                                    .filter("Iphone 16 pro max"::equalsIgnoreCase)
+                                    .isPresent()))
+                    .toList();
         }
 
-        return resultado;
     }
 
 }
