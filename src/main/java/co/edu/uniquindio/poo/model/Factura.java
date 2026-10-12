@@ -48,5 +48,9 @@ public record Factura(String codigo, LocalDate fecha, double total,
         boolean resultado = false;
         resultado= cliente.verificarNombreConR()
                 return resultado;
+
+    }
+
+    public DetalleFactura[] getDetalleFactura() {
     }
 }

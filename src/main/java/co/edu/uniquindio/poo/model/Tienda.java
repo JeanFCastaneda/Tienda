@@ -222,4 +222,26 @@ import java.util.List;
             return resultado;
         }
     }
+//punto5
+
+    public List<Factura> obtenerFacturasIphone16ProMax(List<Factura> listaFacturas) {
+        List<Factura> resultado = new ArrayList<>();
+
+        for (Factura factura : listaFacturas) {
+            for (DetalleFactura detalle : factura.getDetalleFactura()) {
+                String Producto = detalle.getProducto().getNombre();
+
+                if (Optional.ofNullable(Producto)
+                        .filter(producto -> producto.equalsIgnoreCase("iPhone 16 Pro Max"))
+                        .isPresent()) {
+                    resultado.add(factura);
+                    break;
+                }
+                }
+            }
+        }
+
+        return resultado;
+    }
+
 }

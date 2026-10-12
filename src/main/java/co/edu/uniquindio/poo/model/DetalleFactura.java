@@ -29,4 +29,6 @@ public class DetalleFactura {
     public Factura getOwndByFactura() {
         return owndByFactura;
     }
+
+    public DetealleFactura getOwndByFactura{return DetalleFactura}
 }
