@@ -258,7 +258,17 @@ import java.util.List;
                                     .isPresent()))
                     .toList();
         }
+    public List<Producto> obtenerProductosPorCategoria(List<Producto> listaProductos, Categoria categoriaBuscada) {
+        return Optional.ofNullable(listaProductos)
+                .orElse(List.of())
+                .stream()
+                .filter(producto -> Optional.ofNullable(producto)
+                        .map(Producto::getCategoria)
+                        .filter(cat -> cat == categoriaBuscada) 
+                        .isPresent())
+                .toList();
+    }
 
     }
 
-}
+
