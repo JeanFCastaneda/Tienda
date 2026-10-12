@@ -258,16 +258,28 @@ import java.util.List;
                                     .isPresent()))
                     .toList();
         }
+//punto 7
     public List<Producto> obtenerProductosPorCategoria(List<Producto> listaProductos, Categoria categoriaBuscada) {
         return Optional.ofNullable(listaProductos)
                 .orElse(List.of())
                 .stream()
                 .filter(producto -> Optional.ofNullable(producto)
                         .map(Producto::getCategoria)
-                        .filter(cat -> cat == categoriaBuscada) 
+                        .filter(cat -> cat == categoriaBuscada)
                         .isPresent())
                 .toList();
     }
+//punto 8
+public List<Producto> obtenerProductosPorRangoPrecio(List<Producto> listaProductos, float precioMinimo, float precioMaximo) {
+    return Optional.ofNullable(listaProductos)
+            .orElse(List.of())
+            .stream()
+            .filter(producto -> Optional.ofNullable(producto)
+                    .map(Producto::getValor)
+                    .filter(precio -> precio >= precioMinimo && precio <= precioMaximo)
+                    .isPresent())
+            .toList();
+}
 
     }
 
