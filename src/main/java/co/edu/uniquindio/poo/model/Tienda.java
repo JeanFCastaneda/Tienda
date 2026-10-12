@@ -289,6 +289,16 @@ public List<Producto> obtenerProductosOrdenadosPorPrecio(List<Producto> listaPro
             .sorted(Comparator.comparingDouble(Producto::getValor))
             .toList();
 }
+//punto 10
+public Optional<Producto> obtenerProductoMasCostoso(List<Producto> listaProductos) {
+    return Optional.ofNullable(listaProductos)
+            .orElse(List.of())
+            .stream()
+            .filter(Objects::nonNull)
+            .max(Comparator.comparingDouble(Producto::getValor));
+}
+//punto 11
+
     }
 
 
