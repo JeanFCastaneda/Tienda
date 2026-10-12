@@ -298,6 +298,16 @@ public Optional<Producto> obtenerProductoMasCostoso(List<Producto> listaProducto
             .max(Comparator.comparingDouble(Producto::getValor));
 }
 //punto 11
+public List<Cliente> obtenerClientesPorCiudad(List<Cliente> listaClientes, String ciudadResidencia) {
+    return Optional.ofNullable(listaClientes)
+            .orElse(List.of())
+            .stream()
+            .filter(Objects::nonNull)
+            .filter(cliente -> Optional.ofNullable(cliente.getCiudadResidencia())
+                    .filter(ciudadResidencia::equalsIgnoreCase)
+                    .isPresent())
+            .toList();
+}
 
     }
 
