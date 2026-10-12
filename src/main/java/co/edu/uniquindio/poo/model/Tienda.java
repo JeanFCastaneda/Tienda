@@ -280,7 +280,15 @@ public List<Producto> obtenerProductosPorRangoPrecio(List<Producto> listaProduct
                     .isPresent())
             .toList();
 }
-
+//punto 9
+public List<Producto> obtenerProductosOrdenadosPorPrecio(List<Producto> listaProductos) {
+    return Optional.ofNullable(listaProductos)
+            .orElse(List.of())
+            .stream()
+            .filter(Objects::nonNull)
+            .sorted(Comparator.comparingDouble(Producto::getValor))
+            .toList();
+}
     }
 
 
